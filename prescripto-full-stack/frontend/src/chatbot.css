@@ -1,0 +1,134 @@
+/* Main Container */
+.chatbot-container {
+  max-width: 850px;
+  height: 550px;
+  margin: 60px auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #1877F2;
+}
+
+/* Header with Medical Icon */
+.chatbot-header {
+  background-color: #1877F2;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chatbot-header::before {
+  content: url('https://img.icons8.com/ios-filled/50/ffffff/medical-doctor.png');
+  width: 30px;
+  height: 30px;
+}
+
+/* Chat Window */
+.chat-window {
+  flex-grow: 1;
+  padding: 25px;
+  background-color: #f0f8ff; /* Light Sky Blue */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Messages */
+.chat-message {
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in;
+  font-size: 1.1rem;
+}
+
+.chat-message.bot {
+  background-color: #ffffff;
+  border-left: 4px solid #1877F2;
+  align-self: flex-start;
+}
+
+.chat-message.user {
+  background-color: #1877F2;
+  color: white;
+  border-right: 4px solid #145dbf;
+  align-self: flex-end;
+}
+
+/* Input Area */
+.chat-input-area {
+  display: flex;
+  padding: 20px;
+  border-top: 2px solid #1877F2;
+  background: white;
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  padding: 15px;
+  border: 2px solid #1877F2;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.chat-input-area input:focus {
+  box-shadow: 0 0 8px #1877F2;
+}
+
+.chat-input-area button {
+  background-color: #1877F2;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  margin-left: 15px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chat-input-area button:hover {
+  background-color: #145dbf;
+  transform: translateY(-2px);
+}
+
+/* Scrollbar Styling */
+.chat-window::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #1877F2;
+  border-radius: 4px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #f0f8ff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
